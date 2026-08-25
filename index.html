@@ -49,11 +49,9 @@
   .kpi .valor { font-size: 1.35rem; font-weight: 700; }
   .card { background: var(--card); border: 1px solid var(--borde); border-radius: 10px; padding: 16px; }
   .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
-  @media (max-width: 800px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
+  .grid4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  @media (max-width: 800px) { .grid2 { grid-template-columns: 1fr; } }
   .nota { font-size: 0.8rem; color: var(--texto-sec); margin-top: 6px; }
-  .dibox { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px 16px; text-align: center; }
-  .dibox .indicador { font-size: 2.2rem; font-weight: 700; color: var(--texto-sec); margin-bottom: 6px; }
   canvas { max-height: 300px; }
   footer { text-align: center; color: var(--texto-sec); font-size: 0.75rem; padding: 24px; }
 </style>
@@ -69,7 +67,7 @@
 <footer>Generado automaticamente por el pipeline diario de Red+ · dashboard nuevo y aislado, no reemplaza ni modifica el informe/Excel que se envia automaticamente.</footer>
 
 <script>
-const DATA = {"generated_at": "24-08-2026 20:14", "ym_actual": "2026-08", "ym_anterior": "2026-07", "tabs": [{"id": "consolidado", "label": "Consolidado", "cache_hasta": "22-08-2026", "facturado": {"anterior": 740158020.67, "actual": 737026403.94}, "cobrado": {"anterior": 727493579.33, "actual": 581878578.43}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 479, "altas_actual": 253, "bajas_anterior": 267, "bajas_actual": 199}, {"servicio": "Internet", "altas_anterior": 330, "altas_actual": 296, "bajas_anterior": 214, "bajas_actual": 116}, {"servicio": "Dúo (combo)", "altas_anterior": 274, "altas_actual": 200, "bajas_anterior": 126, "bajas_actual": 123}], "pendientes": [{"servicio": "TV", "cantidad": 33}, {"servicio": "Internet", "cantidad": 33}, {"servicio": "Dúo (combo)", "cantidad": 22}]}, {"id": "sf", "label": "San Francisco", "cache_hasta": "24-08-2026", "facturado": {"anterior": 28246077.99, "actual": 27105355.99}, "cobrado": {"anterior": 27165159.99, "actual": 21300130.0}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 17, "altas_actual": 12, "bajas_anterior": 7, "bajas_actual": 9}, {"servicio": "Internet", "altas_anterior": 8, "altas_actual": 16, "bajas_anterior": 31, "bajas_actual": 13}, {"servicio": "Dúo (combo)", "altas_anterior": 8, "altas_actual": 7, "bajas_anterior": 10, "bajas_actual": 14}], "pendientes": [{"servicio": "TV", "cantidad": 2}, {"servicio": "Internet", "cantidad": 5}, {"servicio": "Dúo (combo)", "cantidad": 1}]}, {"id": "daract", "label": "Justo Daract Imagen", "cache_hasta": "22-08-2026", "facturado": {"anterior": 43753212.27, "actual": 42418105.99}, "cobrado": {"anterior": 41004987.34, "actual": 32824670.22}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 45, "altas_actual": 17, "bajas_anterior": 27, "bajas_actual": 11}, {"servicio": "Internet", "altas_anterior": 7, "altas_actual": 6, "bajas_anterior": 8, "bajas_actual": 6}, {"servicio": "Dúo (combo)", "altas_anterior": 11, "altas_actual": 4, "bajas_anterior": 5, "bajas_actual": 1}], "pendientes": [{"servicio": "TV", "cantidad": 0}, {"servicio": "Internet", "cantidad": 1}, {"servicio": "Dúo (combo)", "cantidad": 0}]}, {"id": "antena", "label": "Antena Comunitaria", "cache_hasta": "24-08-2026", "facturado": {"anterior": 99544259.9, "actual": 103385763.14}, "cobrado": {"anterior": 96897047.48, "actual": 84076123.35}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 90, "altas_actual": 38, "bajas_anterior": 34, "bajas_actual": 32}, {"servicio": "Internet", "altas_anterior": 5, "altas_actual": 1, "bajas_anterior": 3, "bajas_actual": 0}, {"servicio": "Dúo (combo)", "altas_anterior": 13, "altas_actual": 2, "bajas_anterior": 3, "bajas_actual": 2}], "pendientes": [{"servicio": "TV", "cantidad": 4}, {"servicio": "Internet", "cantidad": 0}, {"servicio": "Dúo (combo)", "cantidad": 0}]}, {"id": "dupuy", "label": "Dupuy Cable", "cache_hasta": "24-08-2026", "facturado": {"anterior": 23978808.05, "actual": 21195083.95}, "cobrado": {"anterior": 24257984.37, "actual": 14820829.97}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 5, "altas_actual": 3, "bajas_anterior": 3, "bajas_actual": 2}, {"servicio": "Internet", "altas_anterior": 8, "altas_actual": 9, "bajas_anterior": 8, "bajas_actual": 0}, {"servicio": "Dúo (combo)", "altas_anterior": 2, "altas_actual": 2, "bajas_anterior": 2, "bajas_actual": 0}], "pendientes": [{"servicio": "TV", "cantidad": 1}, {"servicio": "Internet", "cantidad": 1}, {"servicio": "Dúo (combo)", "cantidad": 0}]}, {"id": "concaran", "label": "Concaran", "cache_hasta": "24-08-2026", "facturado": {"anterior": 30446441.05, "actual": 29795455.9}, "cobrado": {"anterior": 30103017.88, "actual": 23951403.3}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 10, "altas_actual": 4, "bajas_anterior": 6, "bajas_actual": 1}, {"servicio": "Internet", "altas_anterior": 27, "altas_actual": 25, "bajas_anterior": 23, "bajas_actual": 23}, {"servicio": "Dúo (combo)", "altas_anterior": 13, "altas_actual": 7, "bajas_anterior": 8, "bajas_actual": 4}], "pendientes": [{"servicio": "TV", "cantidad": 0}, {"servicio": "Internet", "cantidad": 0}, {"servicio": "Dúo (combo)", "cantidad": 0}]}, {"id": "latoma", "label": "La Toma", "cache_hasta": "24-08-2026", "facturado": {"anterior": 32050985.12, "actual": 29070607.75}, "cobrado": {"anterior": 30807254.65, "actual": 23859448.73}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 28, "altas_actual": 10, "bajas_anterior": 13, "bajas_actual": 8}, {"servicio": "Internet", "altas_anterior": 16, "altas_actual": 31, "bajas_anterior": 12, "bajas_actual": 6}, {"servicio": "Dúo (combo)", "altas_anterior": 8, "altas_actual": 12, "bajas_anterior": 5, "bajas_actual": 4}], "pendientes": [{"servicio": "TV", "cantidad": 0}, {"servicio": "Internet", "cantidad": 3}, {"servicio": "Dúo (combo)", "cantidad": 1}]}, {"id": "tvcablecolor", "label": "TV Cable Color", "cache_hasta": "24-08-2026", "facturado": {"anterior": 32547457.91, "actual": 33236946.75}, "cobrado": {"anterior": 31982217.13, "actual": 30413900.83}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 79, "altas_actual": 52, "bajas_anterior": 83, "bajas_actual": 64}, {"servicio": "Internet", "altas_anterior": 12, "altas_actual": 3, "bajas_anterior": 16, "bajas_actual": 14}, {"servicio": "Dúo (combo)", "altas_anterior": 26, "altas_actual": 11, "bajas_anterior": 8, "bajas_actual": 23}], "pendientes": [{"servicio": "TV", "cantidad": 6}, {"servicio": "Internet", "cantidad": 0}, {"servicio": "Dúo (combo)", "cantidad": 1}]}, {"id": "huinca", "label": "Huinca Cable", "cache_hasta": "24-08-2026", "facturado": {"anterior": 111553965.57, "actual": 109894890.77}, "cobrado": {"anterior": 112447782.01, "actual": 90219368.59}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 64, "altas_actual": 23, "bajas_anterior": 32, "bajas_actual": 29}, {"servicio": "Internet", "altas_anterior": 51, "altas_actual": 61, "bajas_anterior": 75, "bajas_actual": 29}, {"servicio": "Dúo (combo)", "altas_anterior": 38, "altas_actual": 25, "bajas_anterior": 31, "bajas_actual": 17}], "pendientes": [{"servicio": "TV", "cantidad": 0}, {"servicio": "Internet", "cantidad": 0}, {"servicio": "Dúo (combo)", "cantidad": 3}]}, {"id": "tilisarao", "label": "Tilisarao", "cache_hasta": "24-08-2026", "facturado": {"anterior": 74157837.82, "actual": 69904662.54}, "cobrado": {"anterior": 71916928.6, "actual": 54808568.13}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 39, "altas_actual": 19, "bajas_anterior": 24, "bajas_actual": 8}, {"servicio": "Internet", "altas_anterior": 17, "altas_actual": 14, "bajas_anterior": 19, "bajas_actual": 10}, {"servicio": "Dúo (combo)", "altas_anterior": 13, "altas_actual": 7, "bajas_anterior": 13, "bajas_actual": 3}], "pendientes": [{"servicio": "TV", "cantidad": 0}, {"servicio": "Internet", "cantidad": 1}, {"servicio": "Dúo (combo)", "cantidad": 0}]}, {"id": "esquel", "label": "Canal 4 Esquel", "cache_hasta": "24-08-2026", "facturado": {"anterior": 263878974.99, "actual": 271019531.16}, "cobrado": {"anterior": 260911199.88, "actual": 205604135.31}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 102, "altas_actual": 75, "bajas_anterior": 38, "bajas_actual": 35}, {"servicio": "Internet", "altas_anterior": 179, "altas_actual": 130, "bajas_anterior": 19, "bajas_actual": 15}, {"servicio": "Dúo (combo)", "altas_anterior": 142, "altas_actual": 123, "bajas_anterior": 41, "bajas_actual": 55}], "pendientes": [{"servicio": "TV", "cantidad": 20}, {"servicio": "Internet", "cantidad": 22}, {"servicio": "Dúo (combo)", "cantidad": 16}]}]};
+const DATA = {"generated_at": "25-08-2026 20:17", "ym_actual": "2026-08", "ym_anterior": "2026-07", "tabs": [{"id": "consolidado", "label": "Consolidado", "cache_hasta": "24-08-2026", "facturado": {"anterior": 740158020.67, "actual": 736966003.93}, "cobrado": {"anterior": 727493579.33, "actual": 594290675.27}, "cobrado_comparativa": {"fecha_actual": "24-08-2026", "dias_habiles_actual": 16, "fecha_anterior": "24-07-2026", "dias_habiles_anterior": 18, "cobr_anterior": 635246248.9}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 479, "altas_actual": 260, "bajas_anterior": 267, "bajas_actual": 224}, {"servicio": "Internet", "altas_anterior": 330, "altas_actual": 305, "bajas_anterior": 214, "bajas_actual": 119}, {"servicio": "Dúo (combo)", "altas_anterior": 274, "altas_actual": 211, "bajas_anterior": 126, "bajas_actual": 129}, {"servicio": "Dibox", "inferido": true, "altas_anterior": 10, "altas_actual": 4, "bajas_anterior": 31, "bajas_actual": 43}], "pendientes": [{"servicio": "TV", "cantidad": 34}, {"servicio": "Internet", "cantidad": 29}, {"servicio": "Dúo (combo)", "cantidad": 22}], "saldo_clientes": {"saldo_inicial": 23060, "altas": 241, "recupero": 39, "bajas_vol": 155, "bajas_mora": 84, "migracion": 0, "saldo_final": 23101}}, {"id": "esquel", "label": "Canal 4 Esquel", "cache_hasta": "25-08-2026", "facturado": {"anterior": 263878974.99, "actual": 270959131.15}, "cobrado": {"anterior": 260911199.88, "actual": 209021035.33}, "cobrado_comparativa": {"fecha_actual": "25-08-2026", "dias_habiles_actual": 17, "fecha_anterior": "25-07-2026", "dias_habiles_anterior": 18, "cobr_anterior": 230733778.88}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 102, "altas_actual": 78, "bajas_anterior": 38, "bajas_actual": 38}, {"servicio": "Internet", "altas_anterior": 179, "altas_actual": 136, "bajas_anterior": 19, "bajas_actual": 16}, {"servicio": "Dúo (combo)", "altas_anterior": 142, "altas_actual": 134, "bajas_anterior": 41, "bajas_actual": 60}, {"servicio": "Dibox", "inferido": true, "altas_anterior": 1, "altas_actual": 1, "bajas_anterior": 2, "bajas_actual": 5}], "pendientes": [{"servicio": "TV", "cantidad": 19}, {"servicio": "Internet", "cantidad": 18}, {"servicio": "Dúo (combo)", "cantidad": 19}], "saldo_clientes": {"saldo_inicial": 8351, "altas": 114, "recupero": 13, "bajas_vol": 24, "bajas_mora": 1, "migracion": 0, "saldo_final": 8453}}, {"id": "esquel_esquel", "label": "Esquel (localidad)", "cache_hasta": "25-08-2026", "facturado": {"anterior": 199036482.11, "actual": 201505782.11}, "cobrado": {"anterior": 216470879.59, "actual": 170258731.1}, "cobrado_comparativa": {"fecha_actual": "25-08-2026", "dias_habiles_actual": 17, "fecha_anterior": "25-07-2026", "dias_habiles_anterior": 18, "cobr_anterior": 191186258.59}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 71, "altas_actual": 62, "bajas_anterior": 29, "bajas_actual": 33}, {"servicio": "Internet", "altas_anterior": 97, "altas_actual": 79, "bajas_anterior": 6, "bajas_actual": 5}, {"servicio": "Dúo (combo)", "altas_anterior": 92, "altas_actual": 96, "bajas_anterior": 34, "bajas_actual": 46}, {"servicio": "Dibox", "inferido": true, "altas_anterior": 1, "altas_actual": 1, "bajas_anterior": 0, "bajas_actual": 5}], "pendientes": [{"servicio": "TV", "cantidad": 12}, {"servicio": "Internet", "cantidad": 11}, {"servicio": "Dúo (combo)", "cantidad": 14}], "saldo_clientes": {"saldo_inicial": 5934, "altas": 88, "recupero": 10, "bajas_vol": 12, "bajas_mora": 0, "migracion": 0, "saldo_final": 6020}}, {"id": "esquel_trevelin", "label": "Trevelin", "cache_hasta": "25-08-2026", "facturado": {"anterior": 64842492.88, "actual": 69453349.04}, "cobrado": {"anterior": 44440320.29, "actual": 38762304.23}, "cobrado_comparativa": {"fecha_actual": "25-08-2026", "dias_habiles_actual": 17, "fecha_anterior": "25-07-2026", "dias_habiles_anterior": 18, "cobr_anterior": 39547520.29}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 31, "altas_actual": 16, "bajas_anterior": 9, "bajas_actual": 5}, {"servicio": "Internet", "altas_anterior": 82, "altas_actual": 57, "bajas_anterior": 13, "bajas_actual": 11}, {"servicio": "Dúo (combo)", "altas_anterior": 50, "altas_actual": 38, "bajas_anterior": 7, "bajas_actual": 14}, {"servicio": "Dibox", "inferido": true, "altas_anterior": 0, "altas_actual": 0, "bajas_anterior": 2, "bajas_actual": 0}], "pendientes": [{"servicio": "TV", "cantidad": 7}, {"servicio": "Internet", "cantidad": 7}, {"servicio": "Dúo (combo)", "cantidad": 5}], "saldo_clientes": {"saldo_inicial": 2417, "altas": 26, "recupero": 3, "bajas_vol": 12, "bajas_mora": 1, "migracion": 0, "saldo_final": 2433}}, {"id": "tvcablecolor", "label": "TV Cable Color", "cache_hasta": "25-08-2026", "facturado": {"anterior": 32547457.91, "actual": 33236946.75}, "cobrado": {"anterior": 31982217.13, "actual": 30815400.83}, "cobrado_comparativa": {"fecha_actual": "25-08-2026", "dias_habiles_actual": 17, "fecha_anterior": "25-07-2026", "dias_habiles_anterior": 18, "cobr_anterior": 29870027.18}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 79, "altas_actual": 56, "bajas_anterior": 83, "bajas_actual": 68}, {"servicio": "Internet", "altas_anterior": 12, "altas_actual": 5, "bajas_anterior": 16, "bajas_actual": 14}, {"servicio": "Dúo (combo)", "altas_anterior": 26, "altas_actual": 11, "bajas_anterior": 7, "bajas_actual": 23}, {"servicio": "Dibox", "inferido": true, "altas_anterior": 0, "altas_actual": 0, "bajas_anterior": 9, "bajas_actual": 2}], "pendientes": [{"servicio": "TV", "cantidad": 7}, {"servicio": "Internet", "cantidad": 1}, {"servicio": "Dúo (combo)", "cantidad": 0}], "saldo_clientes": {"saldo_inicial": 1079, "altas": 7, "recupero": 0, "bajas_vol": 4, "bajas_mora": 11, "migracion": 0, "saldo_final": 1071}}, {"id": "antena", "label": "Antena Comunitaria", "cache_hasta": "25-08-2026", "facturado": {"anterior": 99544259.9, "actual": 103385763.14}, "cobrado": {"anterior": 96897047.48, "actual": 86260533.35}, "cobrado_comparativa": {"fecha_actual": "25-08-2026", "dias_habiles_actual": 17, "fecha_anterior": "25-07-2026", "dias_habiles_anterior": 18, "cobr_anterior": 84219744.51}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 90, "altas_actual": 38, "bajas_anterior": 34, "bajas_actual": 50}, {"servicio": "Internet", "altas_anterior": 5, "altas_actual": 1, "bajas_anterior": 3, "bajas_actual": 0}, {"servicio": "Dúo (combo)", "altas_anterior": 13, "altas_actual": 2, "bajas_anterior": 3, "bajas_actual": 2}, {"servicio": "Dibox", "inferido": true, "altas_anterior": 0, "altas_actual": 0, "bajas_anterior": 0, "bajas_actual": 0}], "pendientes": [{"servicio": "TV", "cantidad": 5}, {"servicio": "Internet", "cantidad": 0}, {"servicio": "Dúo (combo)", "cantidad": 0}], "saldo_clientes": {"saldo_inicial": 3351, "altas": 20, "recupero": 6, "bajas_vol": 9, "bajas_mora": 25, "migracion": 0, "saldo_final": 3343}}, {"id": "huinca", "label": "Huinca Cable", "cache_hasta": "25-08-2026", "facturado": {"anterior": 111553965.57, "actual": 109894890.77}, "cobrado": {"anterior": 112447782.01, "actual": 95279754.86}, "cobrado_comparativa": {"fecha_actual": "25-08-2026", "dias_habiles_actual": 17, "fecha_anterior": "25-07-2026", "dias_habiles_anterior": 18, "cobr_anterior": 97960816.99}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 64, "altas_actual": 23, "bajas_anterior": 32, "bajas_actual": 29}, {"servicio": "Internet", "altas_anterior": 51, "altas_actual": 62, "bajas_anterior": 75, "bajas_actual": 31}, {"servicio": "Dúo (combo)", "altas_anterior": 38, "altas_actual": 25, "bajas_anterior": 31, "bajas_actual": 18}, {"servicio": "Dibox", "inferido": true, "altas_anterior": 3, "altas_actual": 0, "bajas_anterior": 5, "bajas_actual": 5}], "pendientes": [{"servicio": "TV", "cantidad": 0}, {"servicio": "Internet", "cantidad": 0}, {"servicio": "Dúo (combo)", "cantidad": 1}], "saldo_clientes": {"saldo_inicial": 3498, "altas": 16, "recupero": 9, "bajas_vol": 38, "bajas_mora": 26, "migracion": 0, "saldo_final": 3459}}, {"id": "tilisarao", "label": "Tilisarao", "cache_hasta": "25-08-2026", "facturado": {"anterior": 74157837.82, "actual": 69904662.54}, "cobrado": {"anterior": 71916928.6, "actual": 55803168.13}, "cobrado_comparativa": {"fecha_actual": "25-08-2026", "dias_habiles_actual": 17, "fecha_anterior": "25-07-2026", "dias_habiles_anterior": 18, "cobr_anterior": 62068698.61}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 39, "altas_actual": 19, "bajas_anterior": 24, "bajas_actual": 8}, {"servicio": "Internet", "altas_anterior": 17, "altas_actual": 14, "bajas_anterior": 19, "bajas_actual": 10}, {"servicio": "Dúo (combo)", "altas_anterior": 13, "altas_actual": 7, "bajas_anterior": 13, "bajas_actual": 3}, {"servicio": "Dibox", "inferido": true, "altas_anterior": 1, "altas_actual": 0, "bajas_anterior": 2, "bajas_actual": 4}], "pendientes": [{"servicio": "TV", "cantidad": 0}, {"servicio": "Internet", "cantidad": 1}, {"servicio": "Dúo (combo)", "cantidad": 0}], "saldo_clientes": {"saldo_inicial": 2165, "altas": 20, "recupero": 1, "bajas_vol": 15, "bajas_mora": 4, "migracion": 0, "saldo_final": 2167}}, {"id": "daract", "label": "Justo Daract Imagen", "cache_hasta": "25-08-2026", "facturado": {"anterior": 43753212.27, "actual": 42418105.99}, "cobrado": {"anterior": 41004987.34, "actual": 32854170.77}, "cobrado_comparativa": {"fecha_actual": "25-08-2026", "dias_habiles_actual": 17, "fecha_anterior": "25-07-2026", "dias_habiles_anterior": 18, "cobr_anterior": 34719090.26}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 45, "altas_actual": 17, "bajas_anterior": 27, "bajas_actual": 11}, {"servicio": "Internet", "altas_anterior": 7, "altas_actual": 6, "bajas_anterior": 8, "bajas_actual": 6}, {"servicio": "Dúo (combo)", "altas_anterior": 11, "altas_actual": 4, "bajas_anterior": 5, "bajas_actual": 1}, {"servicio": "Dibox", "inferido": true, "altas_anterior": 0, "altas_actual": 0, "bajas_anterior": 0, "bajas_actual": 4}], "pendientes": [{"servicio": "TV", "cantidad": 0}, {"servicio": "Internet", "cantidad": 1}, {"servicio": "Dúo (combo)", "cantidad": 0}], "saldo_clientes": {"saldo_inicial": 1264, "altas": 13, "recupero": 3, "bajas_vol": 8, "bajas_mora": 8, "migracion": 0, "saldo_final": 1264}}, {"id": "latoma", "label": "La Toma", "cache_hasta": "25-08-2026", "facturado": {"anterior": 32050985.12, "actual": 29070607.75}, "cobrado": {"anterior": 30807254.65, "actual": 24083348.73}, "cobrado_comparativa": {"fecha_actual": "25-08-2026", "dias_habiles_actual": 17, "fecha_anterior": "25-07-2026", "dias_habiles_anterior": 18, "cobr_anterior": 27550024.65}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 28, "altas_actual": 10, "bajas_anterior": 13, "bajas_actual": 8}, {"servicio": "Internet", "altas_anterior": 16, "altas_actual": 31, "bajas_anterior": 12, "bajas_actual": 6}, {"servicio": "Dúo (combo)", "altas_anterior": 8, "altas_actual": 12, "bajas_anterior": 5, "bajas_actual": 4}, {"servicio": "Dibox", "inferido": true, "altas_anterior": 0, "altas_actual": 0, "bajas_anterior": 2, "bajas_actual": 1}], "pendientes": [{"servicio": "TV", "cantidad": 0}, {"servicio": "Internet", "cantidad": 2}, {"servicio": "Dúo (combo)", "cantidad": 1}], "saldo_clientes": {"saldo_inicial": 1065, "altas": 10, "recupero": 3, "bajas_vol": 16, "bajas_mora": 1, "migracion": 0, "saldo_final": 1061}}, {"id": "sf", "label": "San Francisco", "cache_hasta": "25-08-2026", "facturado": {"anterior": 28246077.99, "actual": 27105355.99}, "cobrado": {"anterior": 27165159.99, "actual": 21354130.0}, "cobrado_comparativa": {"fecha_actual": "25-08-2026", "dias_habiles_actual": 17, "fecha_anterior": "25-07-2026", "dias_habiles_anterior": 18, "cobr_anterior": 23882409.99}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 17, "altas_actual": 12, "bajas_anterior": 7, "bajas_actual": 9}, {"servicio": "Internet", "altas_anterior": 8, "altas_actual": 16, "bajas_anterior": 31, "bajas_actual": 13}, {"servicio": "Dúo (combo)", "altas_anterior": 8, "altas_actual": 7, "bajas_anterior": 11, "bajas_actual": 14}, {"servicio": "Dibox", "inferido": true, "altas_anterior": 0, "altas_actual": 0, "bajas_anterior": 2, "bajas_actual": 0}], "pendientes": [{"servicio": "TV", "cantidad": 2}, {"servicio": "Internet", "cantidad": 5}, {"servicio": "Dúo (combo)", "cantidad": 1}], "saldo_clientes": {"saldo_inicial": 836, "altas": 15, "recupero": 2, "bajas_vol": 24, "bajas_mora": 7, "migracion": 0, "saldo_final": 822}}, {"id": "concaran", "label": "Concaran", "cache_hasta": "25-08-2026", "facturado": {"anterior": 30446441.05, "actual": 29795455.9}, "cobrado": {"anterior": 30103017.88, "actual": 23998303.3}, "cobrado_comparativa": {"fecha_actual": "25-08-2026", "dias_habiles_actual": 17, "fecha_anterior": "25-07-2026", "dias_habiles_anterior": 18, "cobr_anterior": 26329987.88}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 10, "altas_actual": 4, "bajas_anterior": 6, "bajas_actual": 1}, {"servicio": "Internet", "altas_anterior": 27, "altas_actual": 25, "bajas_anterior": 23, "bajas_actual": 23}, {"servicio": "Dúo (combo)", "altas_anterior": 13, "altas_actual": 7, "bajas_anterior": 8, "bajas_actual": 4}, {"servicio": "Dibox", "inferido": true, "altas_anterior": 0, "altas_actual": 0, "bajas_anterior": 0, "bajas_actual": 0}], "pendientes": [{"servicio": "TV", "cantidad": 0}, {"servicio": "Internet", "cantidad": 0}, {"servicio": "Dúo (combo)", "cantidad": 0}], "saldo_clientes": {"saldo_inicial": 900, "altas": 13, "recupero": 2, "bajas_vol": 17, "bajas_mora": 0, "migracion": 0, "saldo_final": 898}}, {"id": "dupuy", "label": "Dupuy Cable", "cache_hasta": "24-08-2026", "facturado": {"anterior": 23978808.05, "actual": 21195083.95}, "cobrado": {"anterior": 24257984.37, "actual": 14820829.97}, "cobrado_comparativa": {"fecha_actual": "24-08-2026", "dias_habiles_actual": 16, "fecha_anterior": "24-07-2026", "dias_habiles_anterior": 18, "cobr_anterior": 17911669.95}, "altas_bajas": [{"servicio": "TV", "altas_anterior": 5, "altas_actual": 3, "bajas_anterior": 3, "bajas_actual": 2}, {"servicio": "Internet", "altas_anterior": 8, "altas_actual": 9, "bajas_anterior": 8, "bajas_actual": 0}, {"servicio": "Dúo (combo)", "altas_anterior": 2, "altas_actual": 2, "bajas_anterior": 2, "bajas_actual": 0}, {"servicio": "Dibox", "inferido": true, "altas_anterior": 5, "altas_actual": 3, "bajas_anterior": 9, "bajas_actual": 22}], "pendientes": [{"servicio": "TV", "cantidad": 1}, {"servicio": "Internet", "cantidad": 1}, {"servicio": "Dúo (combo)", "cantidad": 0}], "saldo_clientes": {"saldo_inicial": 551, "altas": 13, "recupero": 0, "bajas_vol": 0, "bajas_mora": 1, "migracion": 0, "saldo_final": 563}}]};
 
 function fmtMillones(v) {
   if (v === null || v === undefined) return "--";
@@ -89,43 +87,33 @@ document.getElementById("fecha-actualizacion").textContent = DATA.generated_at;
 const chartInstances = {};
 
 function panelHtml(tab, idx) {
-  const cacheNota = tab.cache_hasta
-    ? `<div class="nota">⚠ Cobranza con datos cacheados hasta el <strong>${tab.cache_hasta}</strong>
-       (demo offline, sin conexion a la API -- el "Mes Actual" NO incluye lo cobrado despues de esa
-       fecha, por eso puede verse bajo frente al Mes Anterior, que ya esta completo).</div>`
-    : "";
   return `
     <div class="kpis" id="kpis-${idx}"></div>
     <h2>% Facturado vs Cobranza (Mes Anterior vs Mes Actual)</h2>
-    ${cacheNota}
     <div class="card"><canvas id="chartFactCobr-${idx}"></canvas></div>
     <h2>Altas y Bajas por servicio — Mes Anterior vs Mes Actual</h2>
-    <div class="grid3" id="chartsServicio-${idx}"></div>
-    <div class="grid2" style="margin-top:32px;">
-      <div>
-        <h2>Instalaciones Pendientes por servicio</h2>
-        <div class="card"><canvas id="chartPendientes-${idx}"></canvas></div>
-      </div>
-      <div>
-        <h2>Dibox</h2>
-        <div class="card dibox">
-          <div class="indicador">◆ Estable</div>
-          <div class="nota">Dibox no existe como producto/contrato propio en el CRM -- solo
-          aparece como texto libre en motivos de baja de tipo "cambio de plan". No hay Altas/Bajas
-          ni Instalaciones Pendientes reales para mostrar.</div>
-        </div>
-      </div>
-    </div>
+    <div class="grid4" id="chartsServicio-${idx}"></div>
+    <h2>Instalaciones Pendientes por servicio</h2>
+    <div class="card"><canvas id="chartPendientes-${idx}"></canvas></div>
+    ${tab.saldo_clientes ? `<h2>Saldo de clientes únicos</h2><div class="kpis" id="saldo-${idx}"></div>` : ""}
   `;
+}
+
+function sugMax(...vals) {
+  const m = Math.max(...vals, 0);
+  return m > 0 ? m * 1.15 : undefined;
 }
 
 function renderPanelCharts(tab, idx) {
   document.getElementById(`kpis-${idx}`).innerHTML = kpisHtml(tab);
+  if (tab.saldo_clientes) {
+    document.getElementById(`saldo-${idx}`).innerHTML = saldoClientesHtml(tab.saldo_clientes);
+  }
 
   chartInstances[`fc-${idx}`] = new Chart(document.getElementById(`chartFactCobr-${idx}`), {
     type: "bar",
     data: {
-      labels: ["Mes Anterior (completo)", tab.cache_hasta ? `Mes Actual (cacheado al ${tab.cache_hasta})` : "Mes Actual (parcial)"],
+      labels: ["Mes Anterior", "Mes Actual (parcial)"],
       datasets: [
         { label: "Facturado", data: [tab.facturado.anterior, tab.facturado.actual], backgroundColor: "#0047BA" },
         { label: "Cobrado", data: [tab.cobrado.anterior, tab.cobrado.actual], backgroundColor: "#70AD47" },
@@ -135,15 +123,23 @@ function renderPanelCharts(tab, idx) {
       responsive: true,
       plugins: { legend: { position: "bottom" },
         tooltip: { callbacks: { label: c => `${c.dataset.label}: ${fmtMillones(c.raw)}` } } },
-      scales: { y: { ticks: { callback: fmtMillones } } }
+      scales: {
+        x: { ticks: { maxRotation: 0, minRotation: 0 } },
+        y: { suggestedMax: sugMax(tab.facturado.anterior, tab.facturado.actual, tab.cobrado.anterior, tab.cobrado.actual),
+              ticks: { callback: fmtMillones } }
+      }
     }
   });
 
   const contSrv = document.getElementById(`chartsServicio-${idx}`);
   contSrv.innerHTML = "";
   tab.altas_bajas.forEach((s, i) => {
+    const nota = s.inferido
+      ? `<div class="nota">Inferido de facturación (ítems "Dibox"), no de contrato -- no existe como
+         producto/contrato propio en el CRM.</div>`
+      : "";
     const wrap = document.createElement("div");
-    wrap.innerHTML = `<div class="card"><div style="font-weight:600;margin-bottom:8px;">${s.servicio}</div><canvas id="chartSrv-${idx}-${i}"></canvas></div>`;
+    wrap.innerHTML = `<div class="card"><div style="font-weight:600;margin-bottom:8px;">${s.servicio}</div><canvas id="chartSrv-${idx}-${i}"></canvas>${nota}</div>`;
     contSrv.appendChild(wrap);
     chartInstances[`srv-${idx}-${i}`] = new Chart(wrap.querySelector("canvas"), {
       type: "bar",
@@ -157,7 +153,11 @@ function renderPanelCharts(tab, idx) {
       options: {
         responsive: true,
         plugins: { legend: { position: "bottom" } },
-        scales: { y: { ticks: { precision: 0 } } }
+        scales: {
+          x: { ticks: { maxRotation: 0, minRotation: 0 } },
+          y: { suggestedMax: sugMax(s.altas_anterior, s.altas_actual, s.bajas_anterior, s.bajas_actual),
+                ticks: { precision: 0 } }
+        }
       }
     });
   });
@@ -171,9 +171,27 @@ function renderPanelCharts(tab, idx) {
     options: {
       responsive: true,
       plugins: { legend: { display: false } },
-      scales: { y: { ticks: { precision: 0 } } }
+      scales: {
+        x: { ticks: { maxRotation: 0, minRotation: 0 } },
+        y: { suggestedMax: sugMax(...tab.pendientes.map(p => p.cantidad)), ticks: { precision: 0 } }
+      }
     }
   });
+}
+
+function saldoClientesHtml(s) {
+  const kpis = [
+    ["Saldo inicial de clientes (1er día del mes)", fmtInt(s.saldo_inicial)],
+    ["Altas (mes, acumulado)", fmtInt(s.altas)],
+    ["Recupero (mes, acumulado)", fmtInt(s.recupero)],
+    ["Bajas voluntarias (mes, acumulado)", fmtInt(s.bajas_vol)],
+    ["Bajas por mora (mes, acumulado)", fmtInt(s.bajas_mora)],
+  ];
+  if (s.migracion) kpis.push(["Migración (mes, acumulado)", fmtInt(s.migracion)]);
+  kpis.push(["Saldo final de clientes (activos a hoy)", fmtInt(s.saldo_final)]);
+  return kpis.map(([label, valor]) =>
+    `<div class="kpi"><div class="label">${label}</div><div class="valor">${valor}</div></div>`
+  ).join("");
 }
 
 function kpisHtml(tab) {
@@ -181,10 +199,19 @@ function kpisHtml(tab) {
   const totalPend = tab.pendientes.reduce((s, p) => s + p.cantidad, 0);
   const kpis = [
     ["Facturado (mes actual)", fmtMillones(tab.facturado.actual)],
-    [tab.cache_hasta ? `Cobrado (mes actual, cacheado al ${tab.cache_hasta})` : "Cobrado (mes actual, parcial)", fmtMillones(tab.cobrado.actual)],
-    ["% Cobranza sobre Facturado", fmtPct(pctCobr)],
-    ["Instalaciones Pendientes (total)", fmtInt(totalPend)],
   ];
+  if (tab.cache_hasta && tab.cobrado_comparativa) {
+    const dhLabel = n => n === 1 ? "1 día hábil transcurrido" : `${n} días hábiles transcurridos`;
+    const c = tab.cobrado_comparativa;
+    kpis.push([`Cobrado (mes actual, al ${c.fecha_actual}) — ${dhLabel(c.dias_habiles_actual)}`,
+                fmtMillones(tab.cobrado.actual)]);
+    kpis.push([`Cobrado (mes anterior, al mismo día ${c.fecha_anterior}) — ${dhLabel(c.dias_habiles_anterior)}`,
+                fmtMillones(c.cobr_anterior)]);
+  } else {
+    kpis.push(["Cobrado (mes actual, parcial)", fmtMillones(tab.cobrado.actual)]);
+  }
+  kpis.push(["% Cobranza sobre Facturado", fmtPct(pctCobr)]);
+  kpis.push(["Instalaciones Pendientes (total)", fmtInt(totalPend)]);
   return kpis.map(([label, valor]) =>
     `<div class="kpi"><div class="label">${label}</div><div class="valor">${valor}</div></div>`
   ).join("");
