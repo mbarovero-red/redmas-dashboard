@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "ar.com.redintercable.dashboard",
+      "sha256_cert_fingerprints": [
+        "60:BF:38:66:69:34:76:EE:B4:0B:A4:73:CA:3B:21:0F:C4:A3:CC:4E:CC:F5:4F:9A:72:5A:2D:5F:E6:07:22:C2"
+      ]
+    }
+  }
+]
